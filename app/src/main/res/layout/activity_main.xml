@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="mainViewModel"
+        type="com.example.myapplication.vm.MainViewModel"/>
+</data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ListView
+        android:id="@+id/show_list"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:entries="@array/tmp_list"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/show_roll_result"
+        />
+
+    <TextView
+        android:id="@+id/show_roll_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fuck google!!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/show_list"
+        app:layout_constraintBottom_toBottomOf="@id/click_roll"
+
+        />
+
+        <Button
+            android:id="@+id/click_roll"
+            android:text="start_fuck_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/show_roll_result"
+            />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
