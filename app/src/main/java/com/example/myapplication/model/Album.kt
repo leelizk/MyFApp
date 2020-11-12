@@ -1,15 +1,12 @@
 package com.example.myapplication.model
 
-import java.io.Serializable
-
-data class Album(
-        val id: Int=0,
+class Album(
         val title: String="",
         val category: String="",
         val createDate: String="",
         val ownerId:Int,
-): Serializable {
+): BaseModel() {
     companion object {
-        val EMPTY = Album(0, "", "", "",0)
+        val EMPTY = Album( "", "", "",0)
     }
 }

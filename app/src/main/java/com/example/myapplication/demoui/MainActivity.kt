@@ -10,6 +10,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.example.myapplication.db.AppDatabase
+import com.example.myapplication.db.dao.PhotoDao
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -23,6 +25,8 @@ class MainActivity : AppCompatActivity()  {
     companion object{
         private const val TAG:String="MainActivity"
     }
+
+    var photoDao: PhotoDao?=null;
 
     lateinit var mBinding : ActivityMainBinding
 
@@ -43,6 +47,13 @@ class MainActivity : AppCompatActivity()  {
             }
 
         });
+
+        click_addphoto.setOnClickListener(object:View.OnClickListener{
+            override fun onClick(p0: View?) {
+                Log.d(TAG,photoDao.toString());
+            }
+
+        })
 
 
     }

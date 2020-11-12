@@ -1,9 +1,10 @@
 package com.example.myapplication.model
 
+import java.io.Serializable
 import java.util.*
 
-open class BaseModel<T>{
-    var id:Int=0
-    var createTime:Date =  Date()
-    var updateTime:Date = Date()
+abstract class BaseModel(): Serializable {
+    open var id:Int=0
+    open var createTime:Date =  Date()
+    open var updateTime:Date = Date()
 }
