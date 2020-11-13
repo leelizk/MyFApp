@@ -19,13 +19,13 @@ class SimpleListViewAdapter : BaseAdapter
 
     var context: Context;
 
-    constructor(context:Context,dataList:List<Object>){
+    constructor(context:Context,dataList:List<String>){
         this.context=context
         this.dataList = dataList;
     }
 
     //数据列表
-    var dataList:List<Object> = listOf();
+    var dataList:List<String> = listOf();
 
     override fun getView(position: Int, p1: View?, p2: ViewGroup?): View {
         //加载 layout
