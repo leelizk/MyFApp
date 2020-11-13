@@ -9,6 +9,7 @@ import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.example.myapplication.adapter.SimpleListViewAdapter
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.db.AppDatabase
 import com.example.myapplication.db.dao.PhotoDao
@@ -55,6 +56,14 @@ class MainActivity : AppCompatActivity()  {
 
         })
 
+        var myList:MutableList<Object> = mutableListOf();
+        for(i:Int in 1..10){
+            Log.d(TAG,"debug===>" + i);
+            myList.add(Object());
+        }
+        var simpleAdapter:SimpleListViewAdapter = SimpleListViewAdapter(this,myList);
+
+        show_list.adapter = simpleAdapter;
 
     }
 
