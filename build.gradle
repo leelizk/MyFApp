@@ -11,8 +11,8 @@ buildscript {
         // in the individual module build.gradle files
     }
     repositories {
-        google()
-        jcenter()
+        maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        mavenCentral()
     }
 }
 
@@ -25,6 +25,6 @@ task clean(type: Delete) {
 }
 
 repositories {
-    google()
-    jcenter()
+    maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    mavenCentral()
 }
