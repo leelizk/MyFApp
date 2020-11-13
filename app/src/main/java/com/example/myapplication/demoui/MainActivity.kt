@@ -9,6 +9,7 @@ import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.room.Room
 import com.example.myapplication.adapter.SimpleListViewAdapter
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.db.AppDatabase
@@ -35,13 +36,14 @@ class MainActivity : AppCompatActivity()  {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
          mBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
+         initDb();
         //打印日志
         Log.d(TAG,"MainActivity start");
 
         Toast.makeText(this,"show FFFFF",Toast.LENGTH_SHORT).show();
 
         //显示内容
-        show_roll_result.setOnClickListener(object :View.OnClickListener{
+        click_roll.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v: View?) {
                 val randomInt = (1..6).random()
                 show_roll_result.setText("f you all ::: " + randomInt);
@@ -56,15 +58,25 @@ class MainActivity : AppCompatActivity()  {
 
         })
 
-        var myList:MutableList<Object> = mutableListOf();
-        for(i:Int in 1..10){
-            Log.d(TAG,"debug===>" + i);
-            myList.add(Object());
+        var myList:MutableList<String> = mutableListOf();
+        for(i in 1..10){
+           // Log.d(TAG,"debug===>" + i);
+            myList.add(i.toString());
         }
-        var simpleAdapter:SimpleListViewAdapter = SimpleListViewAdapter(this,myList);
 
+        // 简单的列表
+        var simpleAdapter:SimpleListViewAdapter = SimpleListViewAdapter(this,myList);
+        //使用 adapter
         show_list.adapter = simpleAdapter;
 
+    }
+
+    fun initDb(){
+        val db = Room.databaseBuilder(
+                applicationContext,
+                AppDatabase::class.java, "myfapp.db" // 创建数据库比较消耗资源，可以在Application加载时加载数据库，这样保证Database为单例加载模式，若App有多个进程，需要取消下面这行注释
+        ).build()
+        photoDao = db.photoDao();
     }
 
     //定义方法

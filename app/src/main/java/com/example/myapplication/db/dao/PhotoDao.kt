@@ -4,11 +4,10 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
-import com.example.myapplication.db.IBaseDb
 import com.example.myapplication.model.Photo
 
 @Dao
-interface PhotoDao : IBaseDb<Photo>{
+interface PhotoDao {
 
     @Insert(onConflict = REPLACE)
     suspend fun insertAll(photos: List<Photo>)

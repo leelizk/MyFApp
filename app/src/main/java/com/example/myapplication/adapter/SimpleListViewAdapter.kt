@@ -36,8 +36,8 @@ class SimpleListViewAdapter : BaseAdapter
         var textView2:TextView =view.findViewById(R.id.tv_thumbnailUrl)
         var imageView: ImageView =view.findViewById(R.id.iv_photo_main_Image)
         //通过text设置值
-        textView.text= this.dataList[position].toString();
-        textView2.text= this.dataList[position].toString();
+        textView.text= this.dataList[position]
+        textView2.text= this.dataList[position]
         //load 图片
        // Glide.with(context).load(arr[position].pic).into(imageView)
         return  view
@@ -48,7 +48,7 @@ class SimpleListViewAdapter : BaseAdapter
     }
 
     override fun getItemId(p0: Int): Long {
-        TODO("Not yet implemented")
+        return 0;
     }
 
     override fun getCount(): Int {
