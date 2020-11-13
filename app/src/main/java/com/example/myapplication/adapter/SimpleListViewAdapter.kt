@@ -14,7 +14,7 @@ import kotlin.jvm.internal.Reflection
  * 简单列表显示
  */
 
-class SimpleListView : BaseAdapter
+class SimpleListViewAdapter : BaseAdapter
 {
 
     var context: Context;
