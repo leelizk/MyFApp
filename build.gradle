@@ -28,3 +28,10 @@ repositories {
     maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
     mavenCentral()
 }
+
+configurations.all {
+    resolutionStrategy {
+        force("org.antlr:antlr4-runtime:4.7.1")
+        force("org.antlr:antlr4-tool:4.7.1")
+    }
+}

@@ -3,20 +3,17 @@ package com.example.myapplication.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.io.Serializable
 
 @Entity(tableName = "photo")
-data class Photo{
-
-
+data class Photo(
     @PrimaryKey(autoGenerate = true)
-    var id:Int?=null
+    val id:Int?,
     @ColumnInfo(name = "album_id")
-    val albumId: Int=0
+    val albumId: Int,
     @ColumnInfo(name = "title")
-    val title: String=""
+    val title: String,
     @ColumnInfo(name = "url")
-    val url: String=""
+    val url: String,
     @ColumnInfo(name = "thumbnail_url")
-    val thumbnailUrl: String=""
-}
+    val thumbnailUrl: String
+)

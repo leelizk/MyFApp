@@ -1,6 +1,6 @@
 package com.example.myapplication.model
 
-class Album(
+open class Album(
         val title: String="",
         val category: String="",
         val createDate: String="",
