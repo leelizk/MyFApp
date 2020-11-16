@@ -43,20 +43,20 @@ class MainActivity : AppCompatActivity()  {
         Toast.makeText(this,"show FFFFF",Toast.LENGTH_SHORT).show();
 
         //显示内容
-        click_roll.setOnClickListener(object :View.OnClickListener{
+       /* click_roll.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v: View?) {
                 val randomInt = (1..6).random()
                 show_roll_result.setText("f you all ::: " + randomInt);
             }
 
-        });
+        });*/
 
-        click_addphoto.setOnClickListener(object:View.OnClickListener{
+        /*click_addphoto.setOnClickListener(object:View.OnClickListener{
             override fun onClick(p0: View?) {
                 Log.d(TAG,photoDao.toString());
             }
 
-        })
+        })*/
 
         var myList:MutableList<String> = mutableListOf();
         for(i in 1..10){

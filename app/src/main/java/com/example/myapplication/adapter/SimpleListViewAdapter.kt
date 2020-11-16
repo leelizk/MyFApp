@@ -34,10 +34,10 @@ class SimpleListViewAdapter : BaseAdapter
         //通过view 获取 控件引用
         var textView: TextView =view.findViewById(R.id.tv_title)
         var textView2:TextView =view.findViewById(R.id.tv_thumbnailUrl)
-        var imageView: ImageView =view.findViewById(R.id.iv_photo_main_Image)
+        //var imageView: ImageView =view.findViewById(R.id.iv_photo_main_Image)
         //通过text设置值
-        textView.text= this.dataList[position]
-        textView2.text= this.dataList[position]
+        textView.text= "hello "
+        textView2.text= "==>"+this.dataList[position]
         //load 图片
        // Glide.with(context).load(arr[position].pic).into(imageView)
         return  view
