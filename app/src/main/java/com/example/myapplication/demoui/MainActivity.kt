@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.room.Room
 import com.example.myapplication.adapter.SimpleListViewAdapter
+import com.example.myapplication.adapter.SimpleListViewAdapter2
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.db.AppDatabase
 import com.example.myapplication.db.dao.PhotoDao
@@ -59,13 +60,13 @@ class MainActivity : AppCompatActivity()  {
         })*/
 
         var myList:MutableList<String> = mutableListOf();
-        for(i in 1..10){
-           // Log.d(TAG,"debug===>" + i);
+        //demo to show
+        for(i in 1..21){
             myList.add(i.toString());
         }
 
-        // 简单的列表
-        var simpleAdapter:SimpleListViewAdapter = SimpleListViewAdapter(this,myList);
+        // 简单的列表 two by tow
+        var simpleAdapter:SimpleListViewAdapter2 = SimpleListViewAdapter2(this,myList);
         //使用 adapter
         show_list.adapter = simpleAdapter;
 

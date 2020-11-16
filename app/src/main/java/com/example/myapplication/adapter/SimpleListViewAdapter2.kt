@@ -14,10 +14,12 @@ import kotlin.jvm.internal.Reflection
  * 简单列表显示
  */
 
-class SimpleListViewAdapter : BaseAdapter
+class SimpleListViewAdapter2 : BaseAdapter
 {
 
     var context: Context;
+
+    val pageSize:Int = 2;
 
     constructor(context:Context,dataList:List<String>){
         this.context=context
@@ -29,21 +31,23 @@ class SimpleListViewAdapter : BaseAdapter
 
     override fun getView(position: Int, p1: View?, p2: ViewGroup?): View {
         //加载 layout
-        var view =View.inflate(context, R.layout.list_item,null)
+        var view =View.inflate(context, R.layout.list_item2,null)
 
         //通过view 获取 控件引用
         var title1: TextView =view.findViewById(R.id.tv_title)
-        var url1:TextView =view.findViewById(R.id.tv_thumbnailUrl)
+        var url1:ImageView =view.findViewById(R.id.iv_photo_main_Image)
         //var imageView: ImageView =view.findViewById(R.id.iv_photo_main_Image)
         //通过text设置值
-        title1.text= "hello"
-        url1.text= "==>"+this.dataList[position]
-        var next :Int = position + this.count;
-        if((next) < this.dataList.size) {
+        var newPos:Int = (position * pageSize);
+        title1.text= this.dataList[newPos];
+        Glide.with(context).load(R.drawable.mv18279).into(url1)
+        var nextPos :Int = newPos + 1
+        if((nextPos) < this.dataList.size) {
             var title2: TextView = view.findViewById(R.id.tv_title2);
-            var url2: TextView = view.findViewById(R.id.tv_thumbnailUrl2)
-            title2.text = "item2"
-            url2.text = "==>" + this.dataList[next];
+            var url2: ImageView = view.findViewById(R.id.iv_photo_main_Image2)
+            title2.text = this.dataList[nextPos];
+            //url2.text = "==>" + this.dataList[nextPos];
+            Glide.with(context).load(R.drawable.mv18279).into(url2)
         }
 
         //load 图片
@@ -61,8 +65,8 @@ class SimpleListViewAdapter : BaseAdapter
 
     override fun getCount(): Int {
         if(dataList.size > 0){
-                    return (dataList.size/2) + ((dataList.size%2))
-                }
+            return (dataList.size/2) + ((dataList.size%2))
+         }
 
             return 0;
     }

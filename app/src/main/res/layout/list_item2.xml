@@ -10,13 +10,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="@drawable/textview_border"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         >
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="@dimen/margin_small"
             android:textSize="@dimen/size_large"
             android:typeface="monospace"
@@ -24,26 +24,15 @@
             android:layout_weight="1"
             />
 
-       <!-- <ImageView
+       <ImageView
             android:id="@+id/iv_photo_main_Image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:layout_marginBottom="@dimen/margin_small"
             android:layout_marginTop="@dimen/margin_small"
             android:layout_gravity="center"
             android:contentDescription="@null"
-            android:src="@drawable/ic_launcher_background"/>-->
-
-        <TextView
-            android:id="@+id/tv_thumbnailUrl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_small"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/size_small"
-            android:layout_weight="1"
-
-            />
+            android:src="@drawable/ic_launcher_background"/>
     </LinearLayout>
 
     <LinearLayout
@@ -51,13 +40,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="@drawable/textview_border"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         >
 
         <TextView
             android:id="@+id/tv_title2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="@dimen/margin_small"
             android:textSize="@dimen/size_large"
             android:typeface="monospace"
@@ -65,26 +54,17 @@
             android:layout_weight="1"
             />
 
-        <!-- <ImageView
-             android:id="@+id/iv_photo_main_Image"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
+        <ImageView
+             android:id="@+id/iv_photo_main_Image2"
+             android:layout_width="match_parent"
+             android:layout_height="100dp"
              android:layout_marginBottom="@dimen/margin_small"
              android:layout_marginTop="@dimen/margin_small"
              android:layout_gravity="center"
              android:contentDescription="@null"
-             android:src="@drawable/ic_launcher_background"/>-->
+             android:src="@drawable/ic_launcher_background"/>
 
-        <TextView
-            android:id="@+id/tv_thumbnailUrl2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_small"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/size_small"
-            android:layout_weight="1"
 
-            />
     </LinearLayout>
 
 
